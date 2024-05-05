@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Face detection on the browser using javascript !</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.9/xlsx.full.min.js"></script>
+  <script defer src="face-api.min.js"></script>
+  <script defer src="dummy.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+ 
+  <video id="video" width="600" height="450" autoplay></video>
+  <table id="attendance-table">
+    <thead>
+      <tr>
+        <th>Label</th>
+        <th>Attendance</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Attendance data will be inserted here -->
+    </tbody>
+  </table>
+  <button id="saveButton">Save Data</button>
+</script>
+</body>
+</html>
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Face detection on the browser using JavaScript</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.9/xlsx.full.min.js"></script>
+  <script defer src="face-api.min.js"></script>
+  <script defer src="dummy.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <video id="video" width="600" height="450" autoplay></video>
+  <button id="saveButton">Save Data</button>
+
+  <script>
+    document.getElementById('saveButton').addEventListener('click', async () => {
+      const tableRows = document.querySelectorAll('#attendance-table tbody tr');
+      const data = Array.from(tableRows).map(row => ({
+        date: row.cells[0].textContent,
+        time: row.cells[1].textContent,
+        label: row.cells[2].textContent,
+        attendance: row.cells[3].textContent
+      }));
+      
+      try {
+        const response = await fetch('http://localhost:3000/api/data', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(data)
+        });
+        console.log('Data saved successfully');
+      } catch (error) {
+        console.error('Error saving data:', error);
+      }
+    });
+  </script>
+</body>
+</html> -->
