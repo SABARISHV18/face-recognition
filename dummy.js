@@ -203,6 +203,7 @@ function startWebcam() {
       console.error(error);
     });
 }
+
 document.getElementById('saveButton').addEventListener('click', async () => {
   const tableRows = document.querySelectorAll('#attendance-table tbody tr');
   const data = Array.from(tableRows).map(row => ({
@@ -211,7 +212,7 @@ document.getElementById('saveButton').addEventListener('click', async () => {
   }));
   console.log('Data to be sent:', data);
   try {
-    await fetch('http://localhost:3000/api/data', {
+    await fetch('https://face-detect-backend-6m5kpog4v-sabarishs-projects-09ce967f.vercel.app/api/data', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
